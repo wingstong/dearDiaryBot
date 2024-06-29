@@ -5,10 +5,12 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 def create_calendar(language, year, month):
     if language == 'en':
-        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                  'November', 'December']
         days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
     else:
-        months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+        months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь',
+                  'Ноябрь', 'Декабрь']
         days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 
     markup = InlineKeyboardBuilder()
