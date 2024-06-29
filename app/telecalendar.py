@@ -17,7 +17,8 @@ def create_calendar(language, year, month):
     month_calendar = calendar.monthcalendar(year, month)
     for week in month_calendar:
         row = [InlineKeyboardButton(text=str(day) if day != 0 else ' ',
-                                    callback_data=f'DAY_{day}_{month}_{year}' if day != 0 else 'ignore') for day in week]
+                                    callback_data=f'DAY_{day}_{month}_{year}' if day != 0 else 'ignore')
+               for day in week]
         markup.row(*row)
 
     prev_month = InlineKeyboardButton(text='<', callback_data=f'PREV-MONTH_{month}_{year}')
