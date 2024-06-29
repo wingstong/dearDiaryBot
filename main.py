@@ -1,0 +1,23 @@
+import logging
+import asyncio
+from aiogram import Bot, Dispatcher
+from aiogram.fsm.storage.memory import MemoryStorage
+from app.config import BOT_TOKEN
+from app.handlers import router
+from app.models import create_tables
+
+
+async def main():
+    await create_tables()
+    bot = Bot(token=BOT_TOKEN)
+    dp = Dispatcher(storage=MemoryStorage())
+    dp.include_router(router)
+    logging.info("Starting bot polling")
+    await dp.start_polling(bot)
+
+
+if __name__ == '__main__':
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("Exit")
